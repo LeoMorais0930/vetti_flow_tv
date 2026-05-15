@@ -1,0 +1,17 @@
+name: vetti_flow_tv
+description: VETTI Flow — TV Dashboard
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  signalr_netcore: ^1.3.4
+  shared_preferences: ^2.2.3
+
+flutter:
+  uses-material-design: true
