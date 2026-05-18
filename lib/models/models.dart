@@ -90,3 +90,4 @@ class KitComponentStatus {
         isCompleted: j['isCompleted'],
       );
 }
+// teste
