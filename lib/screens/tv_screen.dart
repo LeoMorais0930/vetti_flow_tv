@@ -345,7 +345,14 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(o.label, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                                  Text(
+                                    o.productCode.isNotEmpty 
+                                        ? '${o.productCode} — ${o.productName}'
+                                        : o.label,
+                                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: kVettiBlue)
+                                  ),
+                                  if (o.productCode.isNotEmpty)
+                                    Text('Lote: ${o.label}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                                   if (o.componentCodes.isNotEmpty)
                                     Text('Kit: ${o.componentCodes}', style: const TextStyle(fontSize: 14, color: Colors.grey)),
                                 ],

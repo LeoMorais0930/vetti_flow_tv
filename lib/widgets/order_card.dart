@@ -70,7 +70,7 @@ class _OrderCardState extends State<OrderCard>
               children: [
                 // ── Lado esquerdo: info do pedido ───────────────────────────────
                 SizedBox(
-                  width: 260,
+                  width: 320, // Aumentado um pouco para acomodar nomes maiores
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,12 +86,25 @@ class _OrderCardState extends State<OrderCard>
                               style: TextStyle(color: Colors.white, fontSize: 11,
                                   fontWeight: FontWeight.w800, letterSpacing: 0.8)),
                         ),
-                      Text(o.label,
+                      Text(
+                          o.productCode.isNotEmpty 
+                              ? '${o.productCode} — ${o.productName}'
+                              : o.label,
                           style: const TextStyle(fontSize: 24,
-                              fontWeight: FontWeight.w700, color: Color(0xFF1A1A1A))),
+                              fontWeight: FontWeight.w900, color: kVettiBlue),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                      ),
+                      if (o.productCode.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text('Lote: ${o.label}',
+                              style: const TextStyle(fontSize: 18,
+                                  fontWeight: FontWeight.w700, color: Color(0xFF1A1A1A))),
+                        ),
                       const SizedBox(height: 8),
                       Text('${o.totalQty} unidades',
-                          style: const TextStyle(fontSize: 18, color: kVettiDGray, fontWeight: FontWeight.w500)),
+                          style: const TextStyle(fontSize: 18, color: kVettiDGray, fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
