@@ -1,12 +1,12 @@
 {
-    "name": "VETTI Flow — TV Dashboard",
-    "short_name": "VETTI TV",
+    "name": "VETTI Flow TV",
+    "short_name": "Flow TV",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Monitoramento de produção em tempo real",
-    "orientation": "landscape",
+    "background_color": "#0073BB",
+    "theme_color": "#0073BB",
+    "description": "Dashboard de Produção VETTI",
+    "orientation": "landscape-primary",
     "prefer_related_applications": false,
     "icons": [
         {
