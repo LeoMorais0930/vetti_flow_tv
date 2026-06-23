@@ -98,7 +98,6 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
     try {
       final all = await ApiService.getActiveOrders();
       final now = DateTime.now();
-      final todayStart = DateTime(now.year, now.month, now.day);
 
       if (mounted) {
         setState(() {
@@ -259,7 +258,7 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(24),
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20)],
+              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20)],
             ),
             child: Row(
               children: [
@@ -311,7 +310,7 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: Colors.green, letterSpacing: 1.5)),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(30)),
+                decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30)),
                 child: const Text('Ótimo trabalho equipe! 🚀', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 18)),
               ),
             ],
@@ -335,7 +334,7 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
-                          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)],
+                          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10)],
                         ),
                         child: Row(
                           children: [
@@ -382,14 +381,14 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(24),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20)],
+          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20)],
           border: Border(left: BorderSide(color: color, width: 8)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: color.withOpacity(0.7), size: 40),
+            Icon(icon, color: color.withValues(alpha: 0.7), size: 40),
             const SizedBox(height: 16),
             Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey, letterSpacing: 1)),
             const SizedBox(height: 8),
@@ -425,7 +424,7 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(children: [
@@ -468,13 +467,13 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
       );
     }
     if (_orders.isEmpty) {
-      return Center(
+      return const Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(Icons.inbox_outlined, size: 72, color: kVettiGray),
-            const SizedBox(height: 16),
-            const Text('Nenhum lote em produção',
+            SizedBox(height: 16),
+            Text('Nenhum lote em produção',
                 style: TextStyle(fontSize: 22, color: Color(0xFFBBBBBB),
                     fontWeight: FontWeight.w300)),
           ],
@@ -500,7 +499,7 @@ class _TvDashboardScreenState extends State<TvDashboardScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(4),
             ),
             child: const Text('AVISO',
